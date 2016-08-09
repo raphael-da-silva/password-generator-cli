@@ -5,8 +5,19 @@
 	=            Script CLI que gera uma senha            =
 	=====================================================*/
 
+	$error = function($message)
+	{
+
+		exit("\e[41m$message\e[0m" . PHP_EOL);
+
+	};
+
+	if(!function_exists('password_hash')){
+		$error('password_hash functions is only supported in PHP >= 5.5.0 versions.');
+	}
+
 	if(!isset($argv[1])){
-		exit('Error: password argument missing.' . PHP_EOL);
+		$error('Error: password argument missing.');
 	}
 
 	$pwd  = $argv[1];
