@@ -1,0 +1,16 @@
+#!/usr/bin/php
+<?php
+
+	/*=====================================================
+	=            Script CLI que gera uma senha            =
+	=====================================================*/
+
+	if(!isset($argv[1])){
+		exit('Error: password argument missing.' . PHP_EOL);
+	}
+
+	$pwd  = $argv[1];
+	$hash = password_hash($pwd, PASSWORD_DEFAULT);
+
+	echo $hash;
+	echo PHP_EOL;
