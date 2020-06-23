@@ -1,0 +1,1 @@
+Este é um script CLI (linha de comando) feito para gerar uma senha para um usuário. Ele é um arquivo com código procedural feito apenas para realizar essa única tarefa.
