@@ -1,27 +1,29 @@
 #!/usr/bin/php
 <?php
 
-	/*=====================================================
-	=            Script CLI que gera uma senha            =
-	=====================================================*/
+/*=====================================================
+=            Script CLI que gera uma senha            =
+=====================================================*/
+/*=====================================================
+=              author: Raphael da Silva              =
+=====================================================*/
 
-	$error = function($message)
-	{
+$error = function($message){
 
-		exit("\e[41m$message\e[0m" . PHP_EOL);
+	exit("\e[41m$message\e[0m" . PHP_EOL);
 
-	};
+};
 
-	if(!function_exists('password_hash')){
-		$error('password_hash functions is only supported in PHP >= 5.5.0 versions.');
-	}
+if(!function_exists('password_hash')){
+	$error('password_hash functions is only supported in PHP >= 5.5.0 versions.');
+}
 
-	if(!isset($argv[1])){
-		$error('Error: password argument missing.');
-	}
+if(!isset($argv[1])){
+	$error('Error: password argument missing.');
+}
 
-	$pwd  = $argv[1];
-	$hash = password_hash($pwd, PASSWORD_DEFAULT);
+$pwd  = $argv[1];
+$hash = password_hash($pwd, PASSWORD_DEFAULT);
 
-	echo $hash;
-	echo PHP_EOL;
+echo $hash;
+echo PHP_EOL;
